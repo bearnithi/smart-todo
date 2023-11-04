@@ -1,0 +1,34 @@
+<li class="list-group-item d-flex p-3 align-items-center w-full gap-1">
+  <div class="form-check checkbox-lg">
+    <input type="checkbox" [title]="task.isCompleted ? 'Move to TasksList' : 'Mark as Completed'"
+      class="form-check-input" [(ngModel)]="task.isCompleted" name="iscompleted"
+      (change)="taskService.publishToDoList()" />
+  </div>
+
+  <ng-container *ngIf="!showEdit; else edit;">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold" [ngClass]="{'text-decoration-line-through': task.isCompleted}">{{task.title}}</div>
+      <span class="text-sm">
+        {{task.date | date}}
+      </span>
+    </div>
+    <button class="btn btn-primary mx-2" title="Edit Task" *ngIf="!task.isCompleted" (click)="showEdit = true"><i
+        class="bi bi-pen"></i></button>
+  </ng-container>
+
+  <button class="btn btn-danger" title="Delete Task" (click)="taskService.removeItem(task)"><i
+      class="bi bi-trash"></i></button>
+</li>
+
+<ng-template #edit>
+  <div class="form-group w-100">
+    <input type="text" class="form-control" [(ngModel)]="task.title" name="name" (keyup.enter)="showEdit = false" />
+  </div>
+
+  <div class="form-group w-25">
+    <!-- Use the 'form-control' class to style the date input with Bootstrap -->
+    <input type="date" name="date" [(ngModel)]="task.date" class="form-control" />
+  </div>
+  <button class="btn btn-primary mx-2" title="Update Task" (click)="showEdit = false"><i
+      class="bi bi-floppy"></i></button>
+</ng-template>
