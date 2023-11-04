@@ -6,7 +6,7 @@
   </div>
 
   <ng-container *ngIf="!showEdit; else edit;">
-    <div class="ms-2 me-auto">
+    <div class="ms-2 me-auto text-break text-wrap">
       <div class="fw-bold" [ngClass]="{'text-decoration-line-through': task.isCompleted}">{{task.title}}</div>
       <span class="text-sm">
         {{task.date | date}}
