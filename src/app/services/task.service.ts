@@ -10,8 +10,6 @@ export class TaskService {
   tasks: Array<Task> = [];
   toDoAdded$ = new Subject<Task[]>();
 
-  constructor() { }
-
   addItem(todo: Task) {
     this.tasks.push(todo);
     this.publishToDoList();

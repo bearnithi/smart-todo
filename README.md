@@ -1,27 +1,84 @@
-# SmartTodo
+# Smart TODO
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
+Smart TODO is a simple task management application built with Angular.
 
-## Development server
+Visit the live demo: [Smart TODO Demo](https://smart-tasks.vercel.app/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Table of Contents
 
-## Code scaffolding
+- [Smart TODO](#smart-todo)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Setup](#setup)
+  - [Usage](#usage)
+  - [Build](#build)
+  - [Testing](#testing)
+  - [Dependencies and Technologies](#dependencies-and-technologies)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Introduction
+
+Smart TODO is a angular application designed to help you manage your tasks efficiently. Wit allows you to add, edit, and mark tasks as completed.
+
+## Setup
+
+To run Smart TODO locally, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/bearnithi/smart-todo.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd smart-todo
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run start
+   ```
+
+5. Open your browser and visit `http://localhost:4200/` to view Smart TODO.
+
+## Usage
+
+1. **Add a Task:** Enter your task in the input field and press "Add Task" or hit Enter.
+2. **Mark as Completed:** Check the checkbox next to a task to mark it as completed.
+3. **Edit a Task:** Click the edit button to modify the task title and due date.
+4. **Delete a Task:** Click the delete button to remove a task from the list.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To build the Smart TODO app for deployment, use the following commands:
 
-## Running unit tests
+```bash
+npm install
+npm run build
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This will create a dist/ directory containing the production-ready files.
 
-## Running end-to-end tests
+## Testing
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Smart TODO uses Jasmine and Karma for unit testing. To run the tests, use:
 
-## Further help
+```bash
+npm run test
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Dependencies and Technologies
+
+Smart TODO is built with the following dependencies and technologies:
+
+- Angular
+- Bootstrap
+- Bootstrap Icons

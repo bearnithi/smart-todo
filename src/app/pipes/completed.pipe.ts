@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Task } from '../models/task.model';
 
 @Pipe({
   name: 'completed',
@@ -12,12 +13,12 @@ export class CompletedPipe implements PipeTransform {
    * @param value todolist array
    * @param isCompleted boolean which acts as a filter.
    */
-  transform(value: any, isCompleted: boolean): any {
-    if (value.length > 0) {
-      return value.filter((currentValue: any) => currentValue.isCompleted === isCompleted);
+  transform(value: Task[], isCompleted: boolean): Task[] {
+    if (!value || value.length === 0) {
+      return value;
     }
 
-    return value;
+    return value.filter((currentValue: any) => currentValue.isCompleted === isCompleted);
   }
 
 }
